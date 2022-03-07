@@ -1,0 +1,89 @@
+.navbar {
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    // background-color: var(--main-color);
+    z-index: 999;
+    background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.3));
+
+
+    &.scrolled {
+        background-color: var(--main-color);
+    }
+    
+    .container {
+        font-size: 14px;
+        padding: 0px 50px;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+        
+        .left {
+            display: flex;
+            align-items: center;
+            img {
+                height: 25px;
+                margin-right: 40px;
+                cursor: pointer;
+            }
+
+            span {
+                margin-right: 20px;
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            .icon {
+                margin: 0px 15px;
+                cursor: pointer;
+            }
+
+            .sb-search {
+                position: relative;
+                // margin-top: 10px;
+                // width: 0%;
+                // min-width: 60px;
+                // height: 60px;
+                // float: right;
+                // overflow: hidden;
+                // transition: width 0.3;
+                // backface-visibility: hidden; 
+            }
+
+            img {
+                height: 25px;
+                border-radius: 5px;
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+            .profile {
+                .options {
+                    display: none;
+                    background-color: var(--main-color);
+                    padding: 10px;
+                    border-radius: 5px;
+                }
+
+                span {
+                    padding: 5px;
+                }
+
+                &:hover {
+                    .options{
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        span {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

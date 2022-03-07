@@ -1,0 +1,53 @@
+.footer {
+    background: var(--main-color);
+    border-top: 1px solid red;
+    width: 100vw;
+    .container {
+        display: flex;
+        flex-direction: column;
+        color: gray;
+        margin: 0 25vw;
+        width: 60vw;
+    
+        .questions {
+            margin-left: 45px;
+            h3 {
+                font-weight: 100;
+            }
+        }
+        .links {
+            display: flex;
+            height: 200px;
+
+            .column1,.column2,.column3,.column4 {
+                flex:1;
+            }
+            ul {
+                list-style-type: none;
+
+                li {
+                    padding: 5px 10px 10px 10px;
+                    font-weight: 100;
+                    font-size: 13px;
+                    cursor: pointer;
+                }
+            }
+
+            
+        }
+        
+        .selector {
+            margin-left: 45px;
+            span {
+                color: gray;
+            }
+            select {
+              background: var(--main-color);
+              color: gray;
+              height: 40px;
+              width: 100px;  
+            }
+        }
+        
+    }
+}
