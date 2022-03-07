@@ -1,7 +1,7 @@
 import "./register.scss";
 import { useState, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../services/api';
 import { ArrowForwardIosOutlined } from "@material-ui/icons";
 
 function Register() {
@@ -25,7 +25,7 @@ function Register() {
         setUsername(usernameRef.current.value);
         console.log(email, passwordRef.current.value,usernameRef.current.value);
         try {
-            await axios.post('/register', {
+            await api.post('/register', {
                 email,
                 username: usernameRef.current.value,
                 password: passwordRef.current.value            

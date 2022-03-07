@@ -3,7 +3,7 @@ import Featured from '../../Components/Featured/Featured'
 import MovieLists from '../../Components/MovieLists/MovieLists'
 import './home.scss'
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../../services/api';
 
 function Home({ type }) {
   const [lists, setLists] = useState([]);
@@ -12,7 +12,7 @@ function Home({ type }) {
   useEffect(() => {
     const getRandomLists = async () => {
       try {
-        const res = await axios.get(
+        const res = await api.get(
           `/getLists${type ? '?type=' + type : ''}${genre ? '&genre=' + genre : ''}`, {
             headers: {
               authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).accessToken}`

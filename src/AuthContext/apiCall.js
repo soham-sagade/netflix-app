@@ -1,4 +1,4 @@
-import axios from 'axios';
+import api from '../services/api'
 
 const loginSuccess = (user) => ({
     type: 'login_Success',
@@ -16,7 +16,7 @@ const logout = () => ({
 
 export const login = async(user, dispatch) => {
     try {
-        const res = await axios.post("/login", user);
+        const res = await api.post("/login", user);
         dispatch(loginSuccess(res.data));
     } catch(e) {
         dispatch(loginFail());

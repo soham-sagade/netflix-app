@@ -2,14 +2,14 @@ import './listitem.scss'
 import { PlayArrow, Add, ThumbUpOutlined, ThumbDownOutlined } from '@material-ui/icons'; 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../../services/api';
 function ListItem({ index, item}) {
   const [isHovered, setIsHovered] = useState(false);
   const [movie, setMovie] = useState({});
   useEffect(() => {
       try {
         const getMovie = async() => {
-          const res = await axios.get(`/movie/${item}`, {
+          const res = await api.get(`/movie/${item}`, {
             headers: {
               authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).accessToken}`
             }
