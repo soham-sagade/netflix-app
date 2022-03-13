@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Home from "./Pages/HomePage/Home";
 import Register from "./Pages/Register/Register";
 import Watch from "./Pages/Watch/Watch";
 import Login from "./Pages/Login/Login";
-import {AuthContext} from './AuthContext/authContext';
+import { AuthContext } from "./AuthContext/authContext";
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,8 +12,15 @@ import {
 } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
 function App() {
-  let user = useContext(AuthContext).user === null ? false : true;  
-  console.log(useContext(AuthContext));
+  let user = useContext(AuthContext).user === null ? false : true;
+  const [footerDisabled, setFooterDisabled] = useState(false);
+
+  const disableFooter = (val) => {
+    setFooterDisabled(val);
+  };
+  useEffect(() => {
+    setFooterDisabled(false);
+  });
   return (
     <div className="App">
       <Router>
@@ -34,13 +41,13 @@ function App() {
                 <Home type="series" />
               </Route>
               <Route path="/watch">
-                <Watch />
+                <Watch disableFooter={disableFooter} />
               </Route>
             </>
           )}
         </Switch>
       </Router>
-      <Footer />
+      {!footerDisabled && <Footer />}
     </div>
   );
 }

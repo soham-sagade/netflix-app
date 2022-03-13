@@ -40,5 +40,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://safe-scrubland-91543.herokuapp.com"
+  "proxy": "http://localhost:8001"
 }
