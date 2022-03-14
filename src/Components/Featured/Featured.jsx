@@ -27,7 +27,7 @@ function Featured({ type, handleGenre }) {
     }
   }, [type]);
 
-  const handleChange = async (e) => {
+  const handleChange = (e) => {
     let genre = e.target.value;
     handleGenre(genre);
   };

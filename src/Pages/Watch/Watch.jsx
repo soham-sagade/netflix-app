@@ -10,6 +10,10 @@ function Watch({ disableFooter }) {
 
   useEffect(() => {
     disableFooter(true);
+
+    return function () {
+      disableFooter(false);
+    };
   });
   return (
     <div className="watch">

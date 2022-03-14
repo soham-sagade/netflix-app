@@ -35,6 +35,7 @@ function ListItem({ index, item }) {
   };
   return (
     <Link to={data}>
+      {isHovered && <div className="listitem"> </div>}
       <div
         className="listitem"
         style={{ left: isHovered && index * 250 - 50 + index * 5 }}
@@ -42,7 +43,6 @@ function ListItem({ index, item }) {
         onMouseLeave={() => setIsHovered(false)}
       >
         <img src={movie.img} alt="" />
-
         {isHovered && (
           <>
             <video src={movie.trailer} autoPlay loop />

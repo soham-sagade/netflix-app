@@ -20,7 +20,8 @@ function App() {
   };
   useEffect(() => {
     setFooterDisabled(false);
-  });
+  }, []);
+  console.log(footerDisabled);
   return (
     <div className="App">
       <Router>
