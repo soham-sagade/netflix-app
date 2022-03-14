@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8001",
+  baseURL: "https://safe-scrubland-91543.herokuapp.com/",
 });
 
 export default api;
